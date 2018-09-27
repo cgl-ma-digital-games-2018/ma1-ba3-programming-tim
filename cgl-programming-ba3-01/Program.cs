@@ -8,28 +8,31 @@ namespace cgl_programming_ba3_01
 {
     class Program
     {
+        //#region FIELDS
+        private static string[] _ourArray = new string[] { "josh", "tim", "manuel" };
+        //#endregion
+
         static void Main(string[] args)
         {
-            var ourArray = new string[] { "josh", "tim", "manuel" };
             Console.WriteLine("Array solution: \n");
 
             Console.WriteLine();
 
-            PrintArray(ourArray);
+            PrintArray(_ourArray);
 
-            Console.WriteLine("Entry at index 1; " + ourArray[1] + "\n");
+            Console.WriteLine("Entry at index 1; " + _ourArray[1] + "\n");
 
-            ourArray[2] = "";
+            _ourArray[2] = "";
 
-            PrintArray(ourArray);
+            PrintArray(_ourArray);
             Console.WriteLine();
 
             Console.WriteLine("Please enter 3 names to overwrite! \n");
-            ourArray[0] = Console.ReadLine();
-            ourArray[1] = Console.ReadLine();
-            ourArray[2] = Console.ReadLine();
+            _ourArray[0] = Console.ReadLine();
+            _ourArray[1] = Console.ReadLine();
+            _ourArray[2] = Console.ReadLine();
 
-            PrintArray(ourArray);
+            PrintArray(_ourArray);
 
             Console.WriteLine();
             Console.WriteLine("List solution: \n");
@@ -48,9 +51,9 @@ namespace cgl_programming_ba3_01
             Console.ReadLine();
         }
 
-        private static int PrintList(List<string> ourList, int itemNumber)
+        private static int PrintList(List<string> list, int itemNumber)
         {
-            foreach (var item in ourList)
+            foreach (var item in list)
             {
 
                 Console.WriteLine("Item" + itemNumber++ + ": " + item);
@@ -59,11 +62,11 @@ namespace cgl_programming_ba3_01
             return itemNumber;
         }
 
-        private static void PrintArray(string[] ourArray)
+        private static void PrintArray(string[] array)
         {
-            for (int i = 0; i < ourArray.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                Console.WriteLine("Entry " + i + ": " + ourArray[i]);
+                Console.WriteLine("Entry " + i + ": " + array[i]);
             }
         }
     }
