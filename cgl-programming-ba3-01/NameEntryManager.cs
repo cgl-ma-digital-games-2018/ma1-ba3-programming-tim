@@ -6,15 +6,15 @@ namespace cgl_programming_ba3_01
 {
     internal class NameEntryManager
     {
-        private ListDataStructure _list = null;
+        private readonly ListDataStructure _list = null;
+        private readonly DictionaryDataStructure _dictionary = null;
 
         private string[] array = null;
-        private Dictionary<int, string> dictionary = null;
 
         public NameEntryManager(string firstEntry)
         {
             _list = new ListDataStructure(firstEntry);
-
+            _dictionary = new DictionaryDataStructure(firstEntry);
             
             //array = new[] {firstEntry};
             //dictionary = new Dictionary<int, string> {{0, firstEntry}};
@@ -22,14 +22,16 @@ namespace cgl_programming_ba3_01
             
         }
 
-        public void AddEntryAtIndex(int position, string entry)
+        public void AddEntryAtIndex(int index, string entry)
         {
-            _list.AddEntryAtPosition(position, entry);
+            _list.AddEntryAtIndex(index, entry);
+            _dictionary.AddEntryAtIndex(index, entry);
         }
 
         public void AddEntryAtEnd(string entry)
         {
             _list.AddEntryAtEnd(entry);
+            _dictionary.AddEntryAtEnd(entry);
 
             // Array.
             //var newArray = new string[array.Length + 1];
@@ -42,19 +44,20 @@ namespace cgl_programming_ba3_01
 
             //// TODO: QUESTION: No need to manually garbage collect, right?
             //newArray = null;
-            
-            // Dictionary.
-            //dictionary.Add(dictionary.Count + 1, entry);
         }
 
-        public string GetEntryAtIndex(int position)
+        public string GetEntryAtIndex(int index)
         {
-            return _list.GetEntryAtPosition(position);
+            var listEntry = "List: " + _list.GetEntryAtIndex(index);
+            var dictionaryEntry = "Dictionary: " + _dictionary.GetEntryAtIndex(index);
+
+            return listEntry + " " + dictionaryEntry;
         }
 
-        public void RemoveEntryAtIndex(int position)
+        public void RemoveEntryAtIndex(int index)
         {
-            _list.RemoveEntryAtPosition(position);
+            _list.RemoveEntryAtIndex(index);
+            _dictionary.RemoveEntryAtIndex(index);
         }
 
         public void ListAllEntries()
@@ -69,11 +72,7 @@ namespace cgl_programming_ba3_01
 
             Console.WriteLine(" List: " + _list.ListAllEntries());
 
-            //Console.WriteLine("\n\n Dictionary :");
-            //foreach (var entry in dictionary)
-            //{
-            //    Console.Write(entry + ", ");
-            //}
+            Console.WriteLine(" Dictionary: " + _dictionary.ListAllEntries());
 
             Console.WriteLine("\n");
         }

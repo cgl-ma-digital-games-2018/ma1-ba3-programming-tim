@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="ArrayDataStructure.cs" />
     <Compile Include="DataStructure.cs" />
+    <Compile Include="DictionaryDataStructure.cs" />
     <Compile Include="ListDataStructure.cs" />
     <Compile Include="NameEntryManager.cs" />
     <Compile Include="Program.cs" />

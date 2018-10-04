@@ -9,17 +9,17 @@ namespace cgl_programming_ba3_01
             throw new NotImplementedException();
         }
 
-        public override void AddEntryAtPosition(int position, string entry)
+        public override void AddEntryAtIndex(int index, string entry)
         {
             throw new NotImplementedException();
         }
 
-        public override string GetEntryAtPosition(int position)
+        public override string GetEntryAtIndex(int index)
         {
             throw new NotImplementedException();
         }
 
-        public override void RemoveEntryAtPosition(int position)
+        public override void RemoveEntryAtIndex(int index)
         {
             throw new NotImplementedException();
         }

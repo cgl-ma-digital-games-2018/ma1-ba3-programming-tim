@@ -14,7 +14,7 @@ namespace cgl_programming_ba3_01
             Console.WriteLine("Name Entry Manager for Array, List & Dictionary.\n");
             
             var nameEntryManager = new NameEntryManager("One");
-            Console.WriteLine("Initialized array, list and dictionary with first entry... \n ");
+            Console.WriteLine("Initialized array, list and dictionary with first entry...");
 
             // Task: List all entries in order.
             nameEntryManager.ListAllEntries();

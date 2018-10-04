@@ -1,27 +1,34 @@
 ﻿using System.Collections.Generic;
 
 namespace cgl_programming_ba3_01
-    
 {
-    internal class ListDataStructure : DataStructure
+    internal class DictionaryDataStructure : DataStructure
     {
-        private List<string> _data = null;
+        private Dictionary<int, string> _data = null;
 
-        public ListDataStructure(string firstEntry)
+        public DictionaryDataStructure(string entry)
         {
-            _data = new List<string>() {firstEntry};
+            _data = new Dictionary<int, string>() {{0, entry}};
         }
 
         #region Methods
 
         public override void AddEntryAtEnd(string entry)
         {
-            _data.Add(entry);
+            var lastIndex = _data.Count - 1;
+            _data.Add(lastIndex + 1, entry);
         }
 
         public override void AddEntryAtIndex(int index, string entry)
         {
-            _data.Insert(index, entry);
+            if (_data.ContainsKey(index))
+            {
+                // copy to new index
+                AddEntryAtEnd(_data[index]);
+                RemoveEntryAtIndex(index);
+            }
+            // ad at index.
+            _data.Add(index, entry);
         }
 
         public override string GetEntryAtIndex(int index)
@@ -31,7 +38,7 @@ namespace cgl_programming_ba3_01
 
         public override void RemoveEntryAtIndex(int index)
         {
-            _data.RemoveAt(index);
+            _data.Remove(index);
         }
 
         public override string ListAllEntries()
@@ -39,7 +46,7 @@ namespace cgl_programming_ba3_01
             var entries = "";
             foreach (var entry in _data)
             {
-                entries += entry + ", ";
+                entries += entry.Value + ", ";
             }
 
             return entries;
