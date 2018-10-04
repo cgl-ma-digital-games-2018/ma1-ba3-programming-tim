@@ -6,7 +6,7 @@ namespace cgl_programming_ba3_01
     {
         public abstract void AddEntryAtEnd(string entry);
 
-        public abstract void AddEntryAtPosition(string entry, int position);
+        public abstract void AddEntryAtPosition(int position, string entry);
 
         public abstract string GetEntryAtPosition(int position);
 

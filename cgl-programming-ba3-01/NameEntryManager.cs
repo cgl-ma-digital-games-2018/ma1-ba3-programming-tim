@@ -19,23 +19,12 @@ namespace cgl_programming_ba3_01
             //array = new[] {firstEntry};
             //dictionary = new Dictionary<int, string> {{0, firstEntry}};
 
-            Console.WriteLine("...initialized array, list and dictionary with first entry... \n \n");
+            
         }
-   
-        
-        
 
-        // 2.1 Add entry in the middle.
-
-        // 3. Retrieve string at position x.
-
-        // 4. Remove entry at position x.
-
-        // 5. List all entries in order.
-
-        public void AddEntryAtPosition(int position)
+        public void AddEntryAtIndex(int position, string entry)
         {
-            throw new NotImplementedException();
+            _list.AddEntryAtPosition(position, entry);
         }
 
         public void AddEntryAtEnd(string entry)
@@ -58,14 +47,14 @@ namespace cgl_programming_ba3_01
             //dictionary.Add(dictionary.Count + 1, entry);
         }
 
-        public void GetEntryAtPosition(int position)
+        public string GetEntryAtIndex(int position)
         {
-            throw new NotImplementedException();
+            return _list.GetEntryAtPosition(position);
         }
 
-        public void RemoveEntryAtPosition(int position)
+        public void RemoveEntryAtIndex(int position)
         {
-            throw new NotImplementedException();
+            _list.RemoveEntryAtPosition(position);
         }
 
         public void ListAllEntries()

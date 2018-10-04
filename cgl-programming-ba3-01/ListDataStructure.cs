@@ -19,19 +19,19 @@ namespace cgl_programming_ba3_01
             _list.Add(entry);
         }
 
-        public override void AddEntryAtPosition(string entry, int position)
+        public override void AddEntryAtPosition(int position, string entry)
         {
-            throw new System.NotImplementedException();
+            _list.Insert(position, entry);
         }
 
         public override string GetEntryAtPosition(int position)
         {
-            throw new System.NotImplementedException();
+            return _list[position];
         }
 
         public override void RemoveEntryAtPosition(int position)
         {
-            throw new System.NotImplementedException();
+            _list.RemoveAt(position);
         }
 
         public override string ListAllEntries()
