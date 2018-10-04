@@ -10,23 +10,12 @@ namespace cgl_programming_ba3_01
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Name Entry Manager for Array, List & Dictionary. \n\n");
+            Console.WriteLine("Name Entry Manager for Array, List & Dictionary. \n");
             
-            var nameEntryManager = new NameEntryManager();
+            // 1. Create name entry manager with one string.
+            var nameEntryManager = new NameEntryManager("One");
 
-            // 0. Create array, list and dictionary.
-            nameEntryManager.InitDataStructures(); 
-
-            // 1. Take three strings.
-
-            // 2. Add the strings.
-
-            // 3. Retrieve string at position x.
-
-            // 4. Remove entry at position x.
-
-            // 5. List all entries in order.
-
+            Console.WriteLine("Press ENTER to exit.");
             Console.ReadLine();
         }
     }
