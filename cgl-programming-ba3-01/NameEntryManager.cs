@@ -16,16 +16,14 @@ namespace cgl_programming_ba3_01
             _list = new ListDataStructure(firstEntry);
 
             
-            array = new[] {firstEntry};
-            dictionary = new Dictionary<int, string> {{0, firstEntry}};
+            //array = new[] {firstEntry};
+            //dictionary = new Dictionary<int, string> {{0, firstEntry}};
 
             Console.WriteLine("...initialized array, list and dictionary with first entry... \n \n");
-
-            ListAllEntries();
         }
    
         
-        // 2. add another string to the end.
+        
 
         // 2.1 Add entry in the middle.
 
@@ -42,20 +40,22 @@ namespace cgl_programming_ba3_01
 
         public void AddEntryAtEnd(string entry)
         {
+            _list.AddEntryAtEnd(entry);
+
             // Array.
-            var newArray = new string[array.Length + 1];
-            for (var i = 0; i < array.Length; i++)
-            {
-                newArray[i] = array[i];
-            }
+            //var newArray = new string[array.Length + 1];
+            //for (var i = 0; i < array.Length; i++)
+            //{
+            //    newArray[i] = array[i];
+            //}
 
-            array = newArray;
+            //array = newArray;
 
-            // TODO: QUESTION: No need to manually garbage collect, right?
-            newArray = null;
+            //// TODO: QUESTION: No need to manually garbage collect, right?
+            //newArray = null;
             
             // Dictionary.
-            dictionary.Add(dictionary.Count + 1, entry);
+            //dictionary.Add(dictionary.Count + 1, entry);
         }
 
         public void GetEntryAtPosition(int position)
@@ -72,19 +72,19 @@ namespace cgl_programming_ba3_01
         {
             //Console.WriteLine("Entries: \n   Array: {0} List: {1} Dictionary: {2}\n", array.Length, list.Count, dictionary.Count);
 
-            Console.WriteLine("Content: \n  Array:");
-            foreach (var entry in array)
-            {
-                Console.Write(entry + ", ");
-            }
+            Console.WriteLine("Content:");
+            //foreach (var entry in array)
+            //{
+            //    Console.Write(entry + ", ");
+            //}
 
-            Console.WriteLine("\n\n List:" + _list.ListAllEntries());
+            Console.WriteLine(" List: " + _list.ListAllEntries());
 
-            Console.WriteLine("\n\n Dictionary:");
-            foreach (var entry in dictionary)
-            {
-                Console.Write(entry + ", ");
-            }
+            //Console.WriteLine("\n\n Dictionary :");
+            //foreach (var entry in dictionary)
+            //{
+            //    Console.Write(entry + ", ");
+            //}
 
             Console.WriteLine("\n");
         }

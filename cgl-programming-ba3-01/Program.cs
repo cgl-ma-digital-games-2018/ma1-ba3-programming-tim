@@ -14,6 +14,13 @@ namespace cgl_programming_ba3_01
             
             // 1. Create name entry manager with one string.
             var nameEntryManager = new NameEntryManager("One");
+            nameEntryManager.ListAllEntries();
+
+
+            // 2. add another string to the end.
+            nameEntryManager.AddEntryAtEnd("Two");
+            Console.WriteLine("Added another string to the end.");
+            nameEntryManager.ListAllEntries();
 
             Console.WriteLine("Press ENTER to exit.");
             Console.ReadLine();
