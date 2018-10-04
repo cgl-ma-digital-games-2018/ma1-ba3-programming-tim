@@ -54,16 +54,16 @@ namespace cgl_programming_ba3_01
 
         public void PrintDataStructures()
         {
-            Console.WriteLine("Length: \n   Array: {0} List: {1} Dictionary: {2}\n", array.Length, list.Capacity, dictionary.Count);
+            Console.WriteLine("Entries: \n   Array: {0} List: {1} Dictionary: {2}\n", array.Length, list.Count, dictionary.Count);
 
-            Console.WriteLine("Content: \n   Array:\n");
+            Console.WriteLine("Content: \n  Array:");
             foreach (var entry in array)
             {
-                Console.WriteLine(entry + "\n");
+                Console.WriteLine("     " + entry + "\n");
             }
 
-            Console.WriteLine("Content: \n   List:\n");
-            Console.WriteLine("Content: \n   Dictionary:\n");
+            Console.WriteLine(" List:");
+            Console.WriteLine(" Dictionary:");
 
         }
     }
