@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Deployment.Internal;
 
 namespace cgl_programming_ba3_01
 {
-    class NameEntryManager
+
+    internal class NameEntryManager
     {
         private string[] array = null;
         private List<string> list = null;
@@ -17,7 +19,7 @@ namespace cgl_programming_ba3_01
 
             Console.WriteLine("...initialized array, list and dictionary with first entry... \n \n");
 
-            PrintDataStructures();
+            ListAllEntries();
         }
    
         
@@ -30,6 +32,11 @@ namespace cgl_programming_ba3_01
         // 4. Remove entry at position x.
 
         // 5. List all entries in order.
+
+        public void AddEntryAtPosition(int position)
+        {
+            throw new NotImplementedException();
+        }
 
         public void AddEntryAtEnd(string entry)
         {
@@ -52,19 +59,39 @@ namespace cgl_programming_ba3_01
             dictionary.Add(dictionary.Count + 1, entry);
         }
 
-        public void PrintDataStructures()
+        public void GetEntryAtPosition(int position)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveEntryAtPosition(int position)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ListAllEntries()
         {
             Console.WriteLine("Entries: \n   Array: {0} List: {1} Dictionary: {2}\n", array.Length, list.Count, dictionary.Count);
 
             Console.WriteLine("Content: \n  Array:");
             foreach (var entry in array)
             {
-                Console.WriteLine("     " + entry + "\n");
+                Console.Write(entry + ", ");
             }
 
-            Console.WriteLine(" List:");
-            Console.WriteLine(" Dictionary:");
+            Console.WriteLine("\n\n List:");
+            foreach (var entry in list)
+            {
+                Console.Write(entry + ", ");
+            }
 
+            Console.WriteLine("\n\n Dictionary:");
+            foreach (var entry in dictionary)
+            {
+                Console.Write(entry + ", ");
+            }
+
+            Console.WriteLine("\n");
         }
     }
 }
