@@ -4,6 +4,33 @@ using System.Deployment.Internal;
 
 namespace cgl_programming_ba3_01
 {
+    internal class ArrayDataStructure : DataStructure<>
+    {
+        public void AddEntryAtEnd(string entry)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddEntryAtPosition(string entry, int position)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void GetEntryAtPosition(int position)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveEntryAtPosition(int position)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ListAllEntries()
+        {
+            throw new NotImplementedException();
+        }
+    }
 
     internal class NameEntryManager
     {
