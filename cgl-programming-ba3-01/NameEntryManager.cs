@@ -4,44 +4,19 @@ using System.Deployment.Internal;
 
 namespace cgl_programming_ba3_01
 {
-    internal class ArrayDataStructure : DataStructure<>
-    {
-        public void AddEntryAtEnd(string entry)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void AddEntryAtPosition(string entry, int position)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void GetEntryAtPosition(int position)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveEntryAtPosition(int position)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ListAllEntries()
-        {
-            throw new NotImplementedException();
-        }
-    }
-
     internal class NameEntryManager
     {
+        private ListDataStructure _list = null;
+
         private string[] array = null;
-        private List<string> list = null;
         private Dictionary<int, string> dictionary = null;
 
         public NameEntryManager(string firstEntry)
         {
+            _list = new ListDataStructure(firstEntry);
+
+            
             array = new[] {firstEntry};
-            list = new List<string>() {firstEntry};
             dictionary = new Dictionary<int, string> {{0, firstEntry}};
 
             Console.WriteLine("...initialized array, list and dictionary with first entry... \n \n");
@@ -78,10 +53,7 @@ namespace cgl_programming_ba3_01
 
             // TODO: QUESTION: No need to manually garbage collect, right?
             newArray = null;
-
-            // List.
-            list.Add(entry);
-
+            
             // Dictionary.
             dictionary.Add(dictionary.Count + 1, entry);
         }
@@ -98,7 +70,7 @@ namespace cgl_programming_ba3_01
 
         public void ListAllEntries()
         {
-            Console.WriteLine("Entries: \n   Array: {0} List: {1} Dictionary: {2}\n", array.Length, list.Count, dictionary.Count);
+            //Console.WriteLine("Entries: \n   Array: {0} List: {1} Dictionary: {2}\n", array.Length, list.Count, dictionary.Count);
 
             Console.WriteLine("Content: \n  Array:");
             foreach (var entry in array)
@@ -106,11 +78,7 @@ namespace cgl_programming_ba3_01
                 Console.Write(entry + ", ");
             }
 
-            Console.WriteLine("\n\n List:");
-            foreach (var entry in list)
-            {
-                Console.Write(entry + ", ");
-            }
+            Console.WriteLine("\n\n List:" + _list.ListAllEntries());
 
             Console.WriteLine("\n\n Dictionary:");
             foreach (var entry in dictionary)
