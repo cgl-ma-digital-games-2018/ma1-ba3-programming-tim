@@ -20,7 +20,15 @@ namespace cgl_programming_ba3_01
 
         public override void AddEntryAtIndex(int index, string entry)
         {
-            //throw new NotImplementedException();
+            Array.Resize(ref _data, _data.Length + 1);
+
+            // Increments the index of each object in the array with a given or higher index.
+            for (int i = _data.Length - 2; i >= index ; i--)
+            {
+                _data[i + 1] = _data[i];
+            }
+
+            _data[index] = entry;
         }
 
         public override string GetEntryAtIndex(int index)
