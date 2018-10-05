@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace cgl_programming_ba3_01
+namespace L02DataStructureIntroduction
 {
     internal class NameEntryManager : DataStructureManager
     {
@@ -11,7 +11,12 @@ namespace cgl_programming_ba3_01
 
         public NameEntryManager(string firstEntry)
         {
-            _dataStructureManagers = new List<DataStructureManager>() { new ArrayManager(firstEntry), new ListManager(firstEntry), new DictionaryManager(firstEntry) };
+            _dataStructureManagers = new List<DataStructureManager>()
+            {
+                new ArrayManager(firstEntry),
+                new ListManager(firstEntry),
+                new DictionaryManager(firstEntry)
+            };
             
             Console.WriteLine("Initialized array, list and dictionary with first entry.");
         }

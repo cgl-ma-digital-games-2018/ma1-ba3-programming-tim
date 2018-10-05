@@ -4,7 +4,7 @@ using System.Net.Configuration;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cgl_programming_ba3_01
+namespace L02DataStructureIntroduction
 {
     class Program
     {

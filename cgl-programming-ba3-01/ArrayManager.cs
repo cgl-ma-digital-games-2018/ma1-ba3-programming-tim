@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace cgl_programming_ba3_01
+namespace L02DataStructureIntroduction
 {
     internal class ArrayManager : DataStructureManager
     {
