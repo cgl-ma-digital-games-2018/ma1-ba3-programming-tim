@@ -23,13 +23,13 @@ namespace cgl_programming_ba3_01
             Console.WriteLine(nameEntryManager.ListAllEntries());
 
             // Task: Add entry at index x.
-            int index = 1;
+            var index = 1;
             nameEntryManager.AddEntryAtIndex(index, "Three");
             Console.WriteLine(nameEntryManager.ListAllEntries());
 
             // Task: Retrieve entry at index x.
             index = 2;
-            Console.WriteLine("Entry at index {0}:\n {1}...\n", index, nameEntryManager.GetEntryAtIndex(index));
+            Console.WriteLine(nameEntryManager.GetEntryAtIndex(index));
             
             // Task: Remove entry at index x.
             nameEntryManager.RemoveEntryAtIndex(index);

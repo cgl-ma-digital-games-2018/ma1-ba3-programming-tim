@@ -3,17 +3,18 @@
 namespace cgl_programming_ba3_01
     
 {
-    internal class ListDataStructure : DataStructure
+    internal class ListManager : DataStructureManager
     {
+        public override string Name { get; } = "List";
+
         private List<string> _data = null;
 
-        public ListDataStructure(string firstEntry)
+        public ListManager(string firstEntry)
         {
             _data = new List<string>() {firstEntry};
         }
 
-        #region Methods
-
+        #region Public Methods
         public override void AddEntryAtEnd(string entry)
         {
             _data.Add(entry);
@@ -41,7 +42,6 @@ namespace cgl_programming_ba3_01
             {
                 entries += entry + ", ";
             }
-
             return entries;
         } 
         #endregion

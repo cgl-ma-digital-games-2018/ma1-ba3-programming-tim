@@ -1,72 +1,72 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Deployment.Internal;
-using System.Runtime.InteropServices;
 
 namespace cgl_programming_ba3_01
 {
-    internal class NameEntryManager :DataStructure
+    internal class NameEntryManager : DataStructureManager
     {
-        private readonly ArrayDataStructure _array = null;
-        private readonly ListDataStructure _list = null;
-        private readonly DictionaryDataStructure _dictionary = null;
+        public override string Name { get; } = "NameEntryManager";
+
+        private readonly List<DataStructureManager> _dataStructureManagers = null;
 
         public NameEntryManager(string firstEntry)
         {
-            _array = new ArrayDataStructure(firstEntry);
-            _list = new ListDataStructure(firstEntry);
-            _dictionary = new DictionaryDataStructure(firstEntry);
+            _dataStructureManagers = new List<DataStructureManager>() { new ArrayManager(firstEntry), new ListManager(firstEntry), new DictionaryManager(firstEntry) };
             
-            Console.WriteLine("Initialized array, list and dictionary with first entry.\n");
+            Console.WriteLine("Initialized array, list and dictionary with first entry.");
         }
 
+        #region Public Methods
         public override void AddEntryAtIndex(int index, string entry)
         {
             Console.WriteLine("Adding entry at index {0}...", index);
 
-            _array.AddEntryAtIndex(index, entry);
-            _list.AddEntryAtIndex(index, entry);
-            _dictionary.AddEntryAtIndex(index, entry);
+            foreach (var manager in _dataStructureManagers)
+            {
+                manager.AddEntryAtIndex(index, entry);
+            }
         }
 
         public override void AddEntryAtEnd(string entry)
         {
             Console.WriteLine("Adding another entry to the end...");
 
-            _array.AddEntryAtEnd(entry);
-            _list.AddEntryAtEnd(entry);
-            _dictionary.AddEntryAtEnd(entry);
+            foreach (var manager in _dataStructureManagers)
+            {
+                manager.AddEntryAtEnd(entry);
+            }
         }
 
         public override string GetEntryAtIndex(int index)
         {
-            var arrayEntry = "Array: " + _array.GetEntryAtIndex(index);
-            var listEntry = "List: " + _list.GetEntryAtIndex(index);
-            var dictionaryEntry = "Dictionary: " + _dictionary.GetEntryAtIndex(index);
-
-            return arrayEntry + " " + listEntry + " " + dictionaryEntry;
+            Console.WriteLine("Getting entry at index {0}...", index);
+            var entryAtIndex = "";
+            foreach (var manager in _dataStructureManagers)
+            {
+                entryAtIndex += "--" + manager.ToString() + ": " + manager.GetEntryAtIndex(index) + "\n";
+            }
+            return entryAtIndex;
         }
 
         public override void RemoveEntryAtIndex(int index)
         {
             Console.WriteLine("Removing entry at index {0}...", index);
 
-            _array.RemoveEntryAtIndex(index);
-            _list.RemoveEntryAtIndex(index);
-            _dictionary.RemoveEntryAtIndex(index);
+            foreach (var manager in _dataStructureManagers)
+            {
+                manager.RemoveEntryAtIndex(index);
+            }
         }
 
         public override string ListAllEntries()
         {
-            Console.WriteLine("Listing all entries...");
-
-            var output = "";
-            output += "Content: \n";
-            output += " Array: " + _array.ListAllEntries() + "\n";
-            output += " List: " + _list.ListAllEntries() + "\n";
-            output += " Dictionary: " + _dictionary.ListAllEntries() + "\n";
-
-            return output;
-        }
+            var allEntries = "";
+            foreach (var manager in _dataStructureManagers)
+            {
+                allEntries += "--" + manager.ToString() + ": " + manager.ListAllEntries() + "\n";
+            }
+            return allEntries;
+        } 
+        #endregion
     }
 }

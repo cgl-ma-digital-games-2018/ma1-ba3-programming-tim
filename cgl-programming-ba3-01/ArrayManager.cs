@@ -2,19 +2,21 @@
 
 namespace cgl_programming_ba3_01
 {
-    internal class ArrayDataStructure : DataStructure
+    internal class ArrayManager : DataStructureManager
     {
+        public override string Name { get; } = "Array";
+
         private string[] _data = null;
 
-        public ArrayDataStructure(string firstEntry)
+        public ArrayManager(string firstEntry)
         {
             _data = new string[] { firstEntry };
         }
 
+        #region Public Methods
         public override void AddEntryAtEnd(string entry)
         {
             Array.Resize(ref _data, _data.Length + 1);
-
             _data[_data.Length - 1] = entry;
         }
 
@@ -23,11 +25,10 @@ namespace cgl_programming_ba3_01
             Array.Resize(ref _data, _data.Length + 1);
 
             // Increments the index of each object in the array with a given or higher index.
-            for (int i = _data.Length - 2; i >= index ; i--)
+            for (int i = _data.Length - 2; i >= index; i--)
             {
                 _data[i + 1] = _data[i];
             }
-
             _data[index] = entry;
         }
 
@@ -54,8 +55,8 @@ namespace cgl_programming_ba3_01
             {
                 output += entry + ", ";
             }
-
             return output;
-        }
+        } 
+        #endregion
     }
 }

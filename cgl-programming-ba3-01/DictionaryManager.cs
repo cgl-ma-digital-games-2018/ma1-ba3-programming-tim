@@ -2,17 +2,18 @@
 
 namespace cgl_programming_ba3_01
 {
-    internal class DictionaryDataStructure : DataStructure
+    internal class DictionaryManager : DataStructureManager
     {
+        public override string Name { get; } = "Dictionary";
+
         private Dictionary<int, string> _data = null;
 
-        public DictionaryDataStructure(string entry)
+        public DictionaryManager(string entry)
         {
             _data = new Dictionary<int, string>() {{0, entry}};
         }
 
-        #region Methods
-
+        #region Public Methods
         public override void AddEntryAtEnd(string entry)
         {
             var lastIndex = _data.Count - 1;
@@ -48,7 +49,6 @@ namespace cgl_programming_ba3_01
             {
                 entries += entry.Value + ", ";
             }
-
             return entries;
         } 
         #endregion

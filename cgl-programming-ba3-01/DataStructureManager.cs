@@ -2,8 +2,11 @@
 
 namespace cgl_programming_ba3_01
 {
-    internal abstract class DataStructure
+    internal abstract class DataStructureManager
     {
+        public abstract string Name { get; }
+
+        #region Methods
         public abstract void AddEntryAtEnd(string entry);
 
         public abstract void AddEntryAtIndex(int index, string entry);
@@ -13,5 +16,11 @@ namespace cgl_programming_ba3_01
         public abstract void RemoveEntryAtIndex(int index);
 
         public abstract string ListAllEntries();
+
+        public override string ToString()
+        {
+            return Name;
+        }
+        #endregion
     }
 }
