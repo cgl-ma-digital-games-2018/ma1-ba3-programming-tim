@@ -6,19 +6,16 @@ namespace cgl_programming_ba3_01
 {
     internal class NameEntryManager :DataStructure
     {
+        private readonly ArrayDataStructure _array = null;
         private readonly ListDataStructure _list = null;
         private readonly DictionaryDataStructure _dictionary = null;
 
-        private string[] array = null;
-
         public NameEntryManager(string firstEntry)
         {
+            _array = new ArrayDataStructure(firstEntry);
             _list = new ListDataStructure(firstEntry);
             _dictionary = new DictionaryDataStructure(firstEntry);
             
-            //array = new[] {firstEntry};
-            //dictionary = new Dictionary<int, string> {{0, firstEntry}};
-
             Console.WriteLine("Initialized array, list and dictionary with first entry...");
         }
 
@@ -33,18 +30,6 @@ namespace cgl_programming_ba3_01
         {
             _list.AddEntryAtEnd(entry);
             _dictionary.AddEntryAtEnd(entry);
-
-            // Array.
-            //var newArray = new string[array.Length + 1];
-            //for (var i = 0; i < array.Length; i++)
-            //{
-            //    newArray[i] = array[i];
-            //}
-
-            //array = newArray;
-
-            //// TODO: QUESTION: No need to manually garbage collect, right?
-            //newArray = null;
 
             Console.WriteLine("Added another entry to the end...");
         }
@@ -67,14 +52,12 @@ namespace cgl_programming_ba3_01
 
         public override string ListAllEntries()
         {
-            //Console.WriteLine("Entries: \n   Array: {0} List: {1} Dictionary: {2}\n", array.Length, list.Count, dictionary.Count);
+            //Console.WriteLine("Entries: \n   Array: {0} List: {1} Dictionary: {2}\n", _array.Length, list.Count, dictionary.Count);
 
             var output = "";
             output += "Content:";
-            //foreach (var entry in array)
-            //{
-            //    Console.Write(entry + ", ");
-            //}
+            
+            output += " Array: " + _array.ListAllEntries();
 
             output += " List: " + _list.ListAllEntries();
 

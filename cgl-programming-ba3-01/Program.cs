@@ -22,7 +22,7 @@ namespace cgl_programming_ba3_01
             nameEntryManager.AddEntryAtEnd("Two");
             Console.WriteLine(nameEntryManager.ListAllEntries());
 
-            // Task: Add entry at position x.
+            // Task: Add entry at index x.
             int index = 1;
             nameEntryManager.AddEntryAtIndex(index, "Three");
             Console.WriteLine(nameEntryManager.ListAllEntries());
