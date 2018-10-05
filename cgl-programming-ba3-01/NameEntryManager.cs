@@ -23,6 +23,8 @@ namespace cgl_programming_ba3_01
         public override void AddEntryAtIndex(int index, string entry)
         {
             Console.WriteLine("Adding entry at index {0}...", index);
+
+            _array.AddEntryAtIndex(index, entry);
             _list.AddEntryAtIndex(index, entry);
             _dictionary.AddEntryAtIndex(index, entry);
         }

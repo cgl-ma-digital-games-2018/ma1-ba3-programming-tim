@@ -13,22 +13,14 @@ namespace cgl_programming_ba3_01
 
         public override void AddEntryAtEnd(string entry)
         {
-           var newArray = new string[_data.Length + 1];
-
-            for (var i = 0; i < _data.Length; i++)
-            {
-                newArray[i] = _data[i];
-            }
-            _data = newArray;
-            // TODO: QUESTION: No need to manually garbage collect, right?
-            newArray = null;
+            Array.Resize(ref _data, _data.Length + 1);
 
             _data[_data.Length - 1] = entry;
         }
 
         public override void AddEntryAtIndex(int index, string entry)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public override string GetEntryAtIndex(int index)
