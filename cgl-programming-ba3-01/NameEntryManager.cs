@@ -4,7 +4,7 @@ using System.Deployment.Internal;
 
 namespace cgl_programming_ba3_01
 {
-    internal class NameEntryManager
+    internal class NameEntryManager :DataStructure
     {
         private readonly ListDataStructure _list = null;
         private readonly DictionaryDataStructure _dictionary = null;
@@ -19,16 +19,17 @@ namespace cgl_programming_ba3_01
             //array = new[] {firstEntry};
             //dictionary = new Dictionary<int, string> {{0, firstEntry}};
 
-            
+            Console.WriteLine("Initialized array, list and dictionary with first entry...");
         }
 
-        public void AddEntryAtIndex(int index, string entry)
+        public override void AddEntryAtIndex(int index, string entry)
         {
             _list.AddEntryAtIndex(index, entry);
             _dictionary.AddEntryAtIndex(index, entry);
+            Console.WriteLine("Added entry at index {0}...", index);
         }
 
-        public void AddEntryAtEnd(string entry)
+        public override void AddEntryAtEnd(string entry)
         {
             _list.AddEntryAtEnd(entry);
             _dictionary.AddEntryAtEnd(entry);
@@ -44,9 +45,11 @@ namespace cgl_programming_ba3_01
 
             //// TODO: QUESTION: No need to manually garbage collect, right?
             //newArray = null;
+
+            Console.WriteLine("Added another entry to the end...");
         }
 
-        public string GetEntryAtIndex(int index)
+        public override string GetEntryAtIndex(int index)
         {
             var listEntry = "List: " + _list.GetEntryAtIndex(index);
             var dictionaryEntry = "Dictionary: " + _dictionary.GetEntryAtIndex(index);
@@ -54,27 +57,30 @@ namespace cgl_programming_ba3_01
             return listEntry + " " + dictionaryEntry;
         }
 
-        public void RemoveEntryAtIndex(int index)
+        public override void RemoveEntryAtIndex(int index)
         {
             _list.RemoveEntryAtIndex(index);
             _dictionary.RemoveEntryAtIndex(index);
+
+            Console.WriteLine("Removed entry at index {0}...", index);
         }
 
-        public void ListAllEntries()
+        public override string ListAllEntries()
         {
             //Console.WriteLine("Entries: \n   Array: {0} List: {1} Dictionary: {2}\n", array.Length, list.Count, dictionary.Count);
 
-            Console.WriteLine("Content:");
+            var output = "";
+            output += "Content:";
             //foreach (var entry in array)
             //{
             //    Console.Write(entry + ", ");
             //}
 
-            Console.WriteLine(" List: " + _list.ListAllEntries());
+            output += " List: " + _list.ListAllEntries();
 
-            Console.WriteLine(" Dictionary: " + _dictionary.ListAllEntries());
+            output += " Dictionary: " + _dictionary.ListAllEntries() + "\n";
 
-            Console.WriteLine("\n");
+            return output;
         }
     }
 }
