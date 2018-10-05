@@ -40,10 +40,11 @@ namespace cgl_programming_ba3_01
 
         public override string GetEntryAtIndex(int index)
         {
+            var arrayEntry = "Array: " + _array.GetEntryAtIndex(index);
             var listEntry = "List: " + _list.GetEntryAtIndex(index);
             var dictionaryEntry = "Dictionary: " + _dictionary.GetEntryAtIndex(index);
 
-            return listEntry + " " + dictionaryEntry;
+            return arrayEntry + " " + listEntry + " " + dictionaryEntry;
         }
 
         public override void RemoveEntryAtIndex(int index)

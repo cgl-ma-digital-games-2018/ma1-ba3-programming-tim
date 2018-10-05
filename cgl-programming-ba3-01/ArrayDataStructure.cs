@@ -33,7 +33,7 @@ namespace cgl_programming_ba3_01
 
         public override string GetEntryAtIndex(int index)
         {
-            throw new NotImplementedException();
+            return _data[index];
         }
 
         public override void RemoveEntryAtIndex(int index)
