@@ -11,7 +11,7 @@ namespace cgl_programming_ba3_01
         static void Main(string[] args)
         {
             // Task: Create name entry manager with one entry.
-            Console.WriteLine("Name Entry Manager for Array, List & Dictionary.\n");
+            Console.WriteLine("Name Entry Manager for Array, List & Dictionary.\n\n");
             
             var nameEntryManager = new NameEntryManager("One");
 

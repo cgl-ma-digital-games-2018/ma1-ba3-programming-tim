@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Deployment.Internal;
+using System.Runtime.InteropServices;
 
 namespace cgl_programming_ba3_01
 {
@@ -16,22 +17,23 @@ namespace cgl_programming_ba3_01
             _list = new ListDataStructure(firstEntry);
             _dictionary = new DictionaryDataStructure(firstEntry);
             
-            Console.WriteLine("Initialized array, list and dictionary with first entry...");
+            Console.WriteLine("Initialized array, list and dictionary with first entry.\n");
         }
 
         public override void AddEntryAtIndex(int index, string entry)
         {
+            Console.WriteLine("Adding entry at index {0}...", index);
             _list.AddEntryAtIndex(index, entry);
             _dictionary.AddEntryAtIndex(index, entry);
-            Console.WriteLine("Added entry at index {0}...", index);
         }
 
         public override void AddEntryAtEnd(string entry)
         {
+            Console.WriteLine("Adding another entry to the end...");
+
+            _array.AddEntryAtEnd(entry);
             _list.AddEntryAtEnd(entry);
             _dictionary.AddEntryAtEnd(entry);
-
-            Console.WriteLine("Added another entry to the end...");
         }
 
         public override string GetEntryAtIndex(int index)
@@ -44,23 +46,20 @@ namespace cgl_programming_ba3_01
 
         public override void RemoveEntryAtIndex(int index)
         {
+            Console.WriteLine("Removing entry at index {0}...", index);
+
             _list.RemoveEntryAtIndex(index);
             _dictionary.RemoveEntryAtIndex(index);
-
-            Console.WriteLine("Removed entry at index {0}...", index);
         }
 
         public override string ListAllEntries()
         {
-            //Console.WriteLine("Entries: \n   Array: {0} List: {1} Dictionary: {2}\n", _array.Length, list.Count, dictionary.Count);
+            Console.WriteLine("Listing all entries...");
 
             var output = "";
-            output += "Content:";
-            
-            output += " Array: " + _array.ListAllEntries();
-
-            output += " List: " + _list.ListAllEntries();
-
+            output += "Content: \n";
+            output += " Array: " + _array.ListAllEntries() + "\n";
+            output += " List: " + _list.ListAllEntries() + "\n";
             output += " Dictionary: " + _dictionary.ListAllEntries() + "\n";
 
             return output;
