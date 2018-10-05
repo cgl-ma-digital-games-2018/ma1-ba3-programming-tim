@@ -38,7 +38,12 @@ namespace cgl_programming_ba3_01
 
         public override void RemoveEntryAtIndex(int index)
         {
-            throw new NotImplementedException();
+            // Decrements the index of each object in the array with an index higher than the given index.
+            for (int i = index + 1; i < _data.Length - 1; i++)
+            {
+                _data[i - 1] = _data[i];
+            }
+            Array.Resize(ref _data, _data.Length - 1);
         }
 
         public override string ListAllEntries()

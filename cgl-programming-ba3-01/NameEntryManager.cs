@@ -51,6 +51,7 @@ namespace cgl_programming_ba3_01
         {
             Console.WriteLine("Removing entry at index {0}...", index);
 
+            _array.RemoveEntryAtIndex(index);
             _list.RemoveEntryAtIndex(index);
             _dictionary.RemoveEntryAtIndex(index);
         }
