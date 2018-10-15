@@ -25,7 +25,6 @@ namespace L03_graphs
             {
                 output += "({" + edge.Nodes[0].Name + "," + edge.Nodes[1].Name + "}" + ", " + edge.Weight + ") ,";
             }
-
             output += "}";
 
             return output;
