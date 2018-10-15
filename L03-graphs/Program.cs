@@ -15,7 +15,7 @@ namespace L03_graphs
             var firstNode = new Node("firstNode", 0);
             var secondNode = new Node("secondNode", 1);
 
-            graphManager.AddEdge(firstNode, secondNode);
+            graphManager.AddEdge(firstNode, secondNode, 1.0f);
 
             Console.WriteLine(graphManager.OutputSet());
 

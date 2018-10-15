@@ -12,9 +12,9 @@ namespace L03_graphs
         //    Nodes.Add(new Node(name, position));
         //}
 
-        public void AddEdge(Node nodeA, Node nodeB)
+        public void AddEdge(Node nodeA, Node nodeB, float weight)
         {
-            Edges.Add(new Edge(nodeA, nodeB));
+            Edges.Add(new Edge(nodeA, nodeB, weight));
         }
 
         public string OutputSet()
