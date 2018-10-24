@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace L04_tree
+namespace L04_trees
 {
     // Class for ordered binary trees
     internal class BinaryTreeManager
