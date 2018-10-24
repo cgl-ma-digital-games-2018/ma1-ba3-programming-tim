@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L03-graphs", "L03-graphs\L0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{CBC399FE-1AFB-48B9-B56D-067B47E2637A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L04-tree", "L04-tree\L04-tree.csproj", "{B88A7BA9-1575-4FAD-BC21-957BDE4BB01B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L04-trees", "L04-tree\L04-trees.csproj", "{B88A7BA9-1575-4FAD-BC21-957BDE4BB01B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
